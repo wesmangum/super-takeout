@@ -21,7 +21,7 @@ function load(app, fn){
 
 
 
-  app.get('/', dbg, orders.new);
+  app.get('/', dbg, users.new);
   app.get('/login', dbg, users.new);
   app.post('/login', dbg, users.login);
 
