@@ -1,0 +1,25 @@
+extends ../shared/template
+
+block content
+  h1= title
+
+  #dashboard
+    #email= user.email
+    button#add.button.button-tiny Add Row
+    #total Total: $0.00
+
+  form#order(action='/orders', method='post')
+    button Create Order
+    div
+      button.delete-row X
+      input(type='number', name='quantity', min=0)
+      select.menu
+        option(value='') Select a Menu
+        each menu in menus
+          option= menu
+      select.dish(name='dishId')
+        option(value='') Select a Dish
+
+
+block scripts
+  script(src='/js/es6/compiled/orders.js')
